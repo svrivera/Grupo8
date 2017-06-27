@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 # -*- coding: latin-1 -*-
+
+#NOMBRE COLECCION = coleccion
+#NOMBRE DB = dbName
+
 import os
 import sys
 # import psycopg2
