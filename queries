@@ -29,6 +29,6 @@
     "database": "mongo",
     "description":
       "Vestibulum vulputate metus at nisl lacinia blandit. Quisque fermentum sagittis mi",
-    "query": "coleccion.insert( { \"attribute\": \"value\" } )"
+    "query": "myColection.insert( { \"attribute\": \"value\" } )"
   }
 ]
