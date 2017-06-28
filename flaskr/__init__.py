@@ -80,5 +80,17 @@ def example():
     return render_template('example.html')
 
 
+# funciones particulares
+
+# Dada una fecha, todos los numeros para los que se tienen mensajes en esa fecha
+# pagina de la forma: query17-23.ing.puc.cl/fecha?fecha=2016-10-24
+@app.route('/fecha', methods=['GET', 'POST'])
+def fecha():
+    fecha2 = request.args.get("fecha")
+    results = mongodb.escuchas.find({"fecha": fecha2}, {"numero": 1, "_id": 0})
+    results = json_util.dumps(results, sort_keys=True, indent=4)
+    return results
+
+
 if __name__ == "__main__":
     app.run()
