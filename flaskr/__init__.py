@@ -88,10 +88,9 @@ def lol():
     return "lol"
 
 
-
 @app.route("/example")
 def example():
-    return render_template('example.html')
+    return "lol"  # render_template('example.html')
 
 
 # funciones particulares
