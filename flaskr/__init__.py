@@ -83,6 +83,12 @@ def postgres():
     return render_template('postgres.html', results=results)
 
 
+@app.route("/lol")
+def lol():
+    return "lol"
+
+
+
 @app.route("/example")
 def example():
     return render_template('example.html')
