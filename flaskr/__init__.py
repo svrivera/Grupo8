@@ -29,7 +29,7 @@ mongodb = client[MONGODATABASE]
 
 # Uncomment for postgres connection
 # REPLACE WITH YOUR DATABASE NAME, USER AND PASS
-POSTGRESDATABASE = "bases.ing.puc.cl"
+POSTGRESDATABASE = "@bases.ing.puc.cl"
 POSTGRESUSER = "grupo8"
 POSTGRESPASS = "bohr2011"
 postgresdb = psycopg2.connect(
