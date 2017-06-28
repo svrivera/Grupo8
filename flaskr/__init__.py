@@ -6,7 +6,7 @@
 
 import os
 import sys
-import psycopg2
+# import psycopg2
 import json
 from bson import json_util
 from pymongo import MongoClient
@@ -27,15 +27,16 @@ MONGOPORT = 27017
 client = MongoClient(MONGOSERVER, MONGOPORT)
 mongodb = client[MONGODATABASE]
 
-# Uncomment for postgres connection
+'''# Uncomment for postgres connection
 # REPLACE WITH YOUR DATABASE NAME, USER AND PASS
-POSTGRESDATABASE = "@bases.ing.puc.cl"
-POSTGRESUSER = "grupo8"
-POSTGRESPASS = "bohr2011"
+POSTGRESDATABASE = ""
+POSTGRESUSER = ""
+POSTGRESPASS = ""
 postgresdb = psycopg2.connect(
     database=POSTGRESDATABASE,
     user=POSTGRESUSER,
     password=POSTGRESPASS)
+'''
 
 
 #Cambiar por Path Absoluto en el servidor
