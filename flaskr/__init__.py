@@ -94,7 +94,7 @@ def fecha():
 def kmensajes():
     k = request.args.get("k")
     numero = request.args.get("numero")
-    results = eval('mongodb.coleccion.find({"numero":"'+numero+'"},{"contenido":1, "_id":0}).sort("fecha",-1).limit(2)')
+    results = eval('mongodb.coleccion.find({"numero":"'+numero+'"},{"contenido":1, "_id":0}).sort("fecha",-1).limit('+k+')')
     results = json_util.dumps(results, sort_keys=True, indent=4)
     return results
 
