@@ -1,9 +1,9 @@
 [
   {
-    "name": "Seleccionar todo",
-    "database": "postgres",
-    "description": "Una muy breve descripción",
-    "query": "SELECT * FROM mytable;"
+    "name": "Números",
+    "database": "mongo",
+    "description": "Dada una fecha, números con mensajes",
+    "query": "coleccion.find({"fecha":"2016-10-24"}, {"numero": 1, "_id":0})"
   },
   {
   "name": "Lorem ipsum dolor sit amet",
