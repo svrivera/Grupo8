@@ -97,6 +97,12 @@ def kmensajes():
     results = eval('mongodb.coleccion.find({"numero":"'+numero+'"},{"contenido":1, "_id":0}).sort("fecha",-1).limit('+k+')')
     results = json_util.dumps(results, sort_keys=True, indent=4)
     return results
+@app.route("/pclave")
+def pclave():
+    clave = request.args.get("clave")
+    results = eval('mongodb.coleccion.find({"$text": {"$search": "'+clave+'"}},{"_id":0})')
+    results = json_util.dumps(results, sort_keys=True, indent=4)
+    return results
 
 @app.route("/example")
 def example():
