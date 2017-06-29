@@ -104,12 +104,8 @@ def pclave():
     results = json_util.dumps(results, sort_keys=True, indent=4)
     return results
 
-@app.route("/jsonpclave")
-def pclave():
-    clave = request.args.get("clave")
-    results = eval('mongodb.coleccion.find({"$text": {"$search": "'+clave+'"}},{"_id":0})')
-    results = json_util.dumps(results, sort_keys=True, indent=4)
-    return render_template('mongo.html', results=results)
+
+
 
 @app.route("/example")
 def example():
