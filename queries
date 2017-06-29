@@ -3,7 +3,7 @@
     "name": "Numeros",
     "database": "mongo",
     "description": "Dada una fecha, números con mensajes",
-    "query": "coleccion.find({\"fecha\":\"2016-10-24\"}, {\"numero\": 1, \"_id\":0});"
+    "query": "coleccion.find({\"fecha\":\"2016-10-24\"}, {\"numero\": 1, \"_id\":0})"
   },
   {
   "name": "Mensajes",
