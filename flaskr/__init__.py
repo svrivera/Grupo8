@@ -83,9 +83,12 @@ def postgres():
     return render_template('postgres.html', results=results)
 
 
-@app.route("/lol")
+@app.route("/fecha2")
 def lol():
-    return "lol"
+    fecha = request.args.get("fecha")
+    results = eval('mongodb.'+ 'coleccion.find({"fecha":"'+fecha+'"}, {"numero": 1, "_id":0})')
+    results = json_util.dumps(results, sort_keys=True, indent=4)
+    return results
 
 
 @app.route("/example")
