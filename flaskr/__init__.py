@@ -83,13 +83,20 @@ def postgres():
     return render_template('postgres.html', results=results)
 
 
-@app.route("/fecha2")
-def lol():
+@app.route("/fecha")
+def fecha():
     fecha = request.args.get("fecha")
     results = eval('mongodb.'+ 'coleccion.find({"fecha":"'+fecha+'"}, {"numero": 1, "_id":0})')
     results = json_util.dumps(results, sort_keys=True, indent=4)
     return results
 
+@app.route("/kmensajes")
+def kmensajes():
+    k = request.args.get("k")
+    numero = request.args.get("numero")
+    results = eval('mongodb.coleccion.find({"numero":"'+numero+'"},{"contenido":1, "_id":0}).sort("fecha",-1).limit(2)')
+    results = json_util.dumps(results, sort_keys=True, indent=4)
+    return results
 
 @app.route("/example")
 def example():
@@ -100,12 +107,7 @@ def example():
 
 # Dada una fecha, todos los numeros para los que se tienen mensajes en esa fecha
 # pagina de la forma: query17-23.ing.puc.cl/fecha?fecha=2016-10-24
-@app.route("/fecha")
-def fecha():
-    fecha2 = request.args.get("fecha")
-    results = mongodb.coleccion.find({"fecha": fecha2}, {"numero": 1, "_id": 0})
-    results = json_util.dumps(results, sort_keys=True, indent=4)
-    return results
+
 
 
 if __name__ == "__main__":
