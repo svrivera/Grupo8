@@ -100,7 +100,7 @@ def kmensajes():
 @app.route("/pclave")
 def pclave():
     clave = request.args.get("clave")
-    results = eval('mongodb.coleccion.find({"$text": {"$search": "'+clave+'"}},{"_id":0})')
+    results = eval('mongodb.coleccion.find({"$text": {"$search": "\\"'+clave+'\\""}},{"_id":0})')
     results = json_util.dumps(results, sort_keys=True, indent=4)
     return results
 
