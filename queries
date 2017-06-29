@@ -1,34 +1,26 @@
 [
   {
-    "name": "Números",
+    "name": "Numeros",
     "database": "mongo",
     "description": "Dada una fecha, números con mensajes",
-    "query": "coleccion.find({"fecha":"2016-10-24"},{"numero":1,"_id":0})"
+    "query": "coleccion.find({\"fecha\":\"2016-10-24\"}, {\"numero\": 1, \"_id\":0});"
   },
   {
-  "name": "Lorem ipsum dolor sit amet",
+  "name": "Mensajes",
   "database": "mongo",
-  "description":
-  "Vestibulum vulputate metus at nisl lacinia blandit. Quisque fermentum sagittis mi",
-  "query": "myCollection.find( {\"attribute\": \"value\"} )"
+  "description": "Últimos k mensajes de un número",
+  "query": "coleccion.find({\"numero\":\"39888642\"},{\"contenido\":1,\"_id\":0}).sort(\"fecha\",-1).limit(2)"
   },
   {
-    "name": "Sebastián",
-    "database": "postgres",
-    "description": "Una consulta de Sebastián 🙋",
-    "query": "SELECT * FROM mytable WHERE nombre='Sebastián';"
+    "name": "json",
+    "database": "mongo",
+    "description": "Todos los json con la palabra",
+    "query": "coleccion.find({\"$text\": {\"$search\": \"completo\"}},{\"_id\":0})"
   },
   {
     "name": "Quiero todo de mongo 😄",
     "database": "mongo",
     "description": "...",
-    "query": "myCollection.find()"
-  },
-  {
-    "name": "Insertar a mongo",
-    "database": "mongo",
-    "description":
-      "Vestibulum vulputate metus at nisl lacinia blandit. Quisque fermentum sagittis mi",
-    "query": "myCollection.insert( { \"attribute\": \"value\" } )"
+    "query": "coleccion.find()"
   }
 ]
